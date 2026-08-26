@@ -15,9 +15,10 @@
         <li><a href="#Connect">Connect</a></li>
         <li><a href="#Skills">Skills</a></li>
         <li><a href="#Projects">Projects</a></li>
+        <li><a href ="#leave_message">Leave a Message</a></li>
       </ul>
     </nav>
-    <section class="About">
+    <section id="About">
       <h2>About</h2>
       <p>
         My name is Miroslav. I am 19 years old. I was born and lived most of my
@@ -27,7 +28,7 @@
         path with Code The Dream.
       </p>
     </section>
-    <section class="Experience">
+    <section id="Experience">
       <h2>Experience</h2>
       <ul class="container">
         <li class="item">Python</li>
@@ -38,15 +39,15 @@
         <li class="item">etc</li>
       </ul>
     </section>
-    <section class="skills">
+    <section id="Skills">
       <h2>Skills</h2>
       <ul></ul>
     </section>
-    <section class="Projects">
+    <section id="Projects">
       <h2>Projects</h2>
       <ul></ul>
     </section>
-    <section class="Connect">
+    <section id="Connect">
       <h2>Connect</h2>
       <ul class="container">
         <li class="item"><a href="https://github.com/sl1vaaa">GitHub</a></li>
@@ -60,6 +61,28 @@
             >Instagram</a
           >
         </li>
+      </ul>
+    </section>
+    <section id="leave_message">
+      <h2>Leave a Message</h2>
+      <form name="leave_message">
+
+        <label for="usersName">Username:</label>
+        <input type="text" name="usersName" required><br></br>
+
+        <label for="usersEmail">Email:</label>
+        <input type="email" name="usersEmail" required><br></br>
+
+        <label for="usersMessage">Message:</label>
+        <textarea name="usersMessage" required></textarea><br></br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section id="messages">
+      <h2>Messages</h2>
+      <ul>
+        
       </ul>
     </section>
     <script src="js/index.js"></script>

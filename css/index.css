@@ -27,7 +27,7 @@ li {
   background-color: azure;
 }
 
-.Experience {
+#Experience {
   display: block;
   text-align: center;
   background-color: aquamarine;
@@ -84,4 +84,60 @@ footer {
   background-color: brown;
   font-size: 25px;
   font-weight: bold;
+}
+
+#leave_message {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#leave_message input,
+#leave_message textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#leave_message textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#leave_message button {
+  padding: 12px 20px;
+  min-height: 44px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#messages ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+#messages li {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#messages li button {
+  margin-left: 10px;
+  min-height: 44px;
+  padding: 8px 16px;
+  cursor: pointer;
 }

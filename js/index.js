@@ -1,3 +1,5 @@
+// const { createElement } = require("react");
+
 const realFooter = document.createElement("footer");
 
 document.body.appendChild(realFooter);
@@ -25,7 +27,7 @@ const skills = [
   "Data Manipulation",
 ];
 
-const skillsSection = document.querySelector(".skills");
+const skillsSection = document.querySelector("#Skills");
 
 const skillsList = skillsSection.querySelector("ul");
 
@@ -35,3 +37,37 @@ for (let i = 0; i < skills.length; i++) {
 
   skillsList.appendChild(skill);
 }
+
+const messageForm = document.forms["leave_message"];
+
+messageForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const usersName = event.target.elements["usersName"].value;
+  const usersEmail = event.target.elements["usersEmail"].value;
+  const usersMessage = event.target.elements["usersMessage"].value;
+
+  console.log("Data submitted:", { usersName, usersEmail, usersMessage });
+
+  const messageSection = document.querySelector("#messages");
+  const messageList = messageSection.querySelector("ul");
+  const newMessage = document.createElement("li");
+  newMessage.innerHTML = `
+  <a href="mailto:${usersEmail}">${usersName}</a>
+  <span>${usersMessage}</span>
+  `;
+
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "remove";
+  removeButton.setAttribute("type", "button");
+
+  removeButton.addEventListener("click", function (event) {
+    const entry = removeButton.parentNode;
+
+    entry.remove();
+  });
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+
+  messageForm.reset();
+});
