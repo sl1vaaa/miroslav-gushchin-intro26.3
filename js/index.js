@@ -71,3 +71,45 @@ messageForm.addEventListener("submit", function (event) {
 
   messageForm.reset();
 });
+
+// async function fetchData() {
+//  try {
+//    const response = await fetch("https://api.github.com/users/sl1vaaa/repos");
+
+//   if(!response.ok) {
+//     throw new Error("Couldn't get data");
+//   }
+
+//   const data = await response.json();
+//   console.log(data);
+//  }
+//  catch(error) {
+//   console.error("An error occured: ", error);
+//  }
+// }
+
+// fetchData();
+
+fetch("https://api.github.com/users/sl1vaaa/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const repositories = data;
+    console.log(repositories);
+
+    const projectSection = document.querySelector("#Projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement("li");
+      project.innerText = repositories[i].name;
+      projectList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
