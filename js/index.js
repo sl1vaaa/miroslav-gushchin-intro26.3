@@ -4,6 +4,7 @@ const realFooter = document.createElement("footer");
 
 document.body.appendChild(realFooter);
 
+//create and paste the footer with a copyright message 
 const today = new Date();
 const thisYear = today.getFullYear();
 
@@ -14,6 +15,7 @@ copyright.innerHTML = `© ${thisYear} Miroslav Gushchin. My website. All rights 
 
 footer.appendChild(copyright);
 
+//create list of skills 
 const skills = [
   "Java",
   "Python",
@@ -30,7 +32,7 @@ const skills = [
 const skillsSection = document.querySelector("#Skills");
 
 const skillsList = skillsSection.querySelector("ul");
-
+//pasting skills on the webpage using DOM
 for (let i = 0; i < skills.length; i++) {
   const skill = document.createElement("li");
   skill.innerHTML = skills[i];
@@ -38,8 +40,10 @@ for (let i = 0; i < skills.length; i++) {
   skillsList.appendChild(skill);
 }
 
+//creating leave a message form
 const messageForm = document.forms["leave_message"];
 
+//creating event listener to submit user's message and info
 messageForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -72,24 +76,7 @@ messageForm.addEventListener("submit", function (event) {
   messageForm.reset();
 });
 
-// async function fetchData() {
-//  try {
-//    const response = await fetch("https://api.github.com/users/sl1vaaa/repos");
-
-//   if(!response.ok) {
-//     throw new Error("Couldn't get data");
-//   }
-
-//   const data = await response.json();
-//   console.log(data);
-//  }
-//  catch(error) {
-//   console.error("An error occured: ", error);
-//  }
-// }
-
-// fetchData();
-
+//fetching and pasting gitHub repositories in the projects section
 fetch("https://api.github.com/users/sl1vaaa/repos")
   .then((response) => {
     if (!response.ok) {
