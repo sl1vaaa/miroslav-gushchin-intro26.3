@@ -1,9 +1,11 @@
+//creating buttons
 const peopleButton = document.querySelector("#peopleButton");
 const planetButton = document.querySelector("#planetsButton");
 const content = document.querySelector("#content");
 let personCounter = 1;
 let planetCounter = 1;
 
+//adding event listener to people button and fetching info from the API into my webpage
 peopleButton.addEventListener("click", fetchPeopleData);
 
 async function fetchPeopleData() {
@@ -54,6 +56,7 @@ async function fetchPeopleData() {
   }
 }
 
+//adding event listener to planet button and fetching info from the API into my webpage
 planetButton.addEventListener("click", fetchPlanetData);
 
 async function fetchPlanetData() {
